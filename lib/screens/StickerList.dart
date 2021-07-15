@@ -148,44 +148,40 @@ class _StickerListState extends State<StickerList> {
     }
 
     if (installed == true) {
-      setState(() {
-        depInstallWidget = IconButton(
-          icon: Icon(
-            Icons.check,
-          ),
-          color: Theme.of(context).primaryColor,
-          tooltip: 'Add Sticker to WhatsApp',
-          onPressed: () {},
-        );
-      });
+      depInstallWidget = IconButton(
+        icon: Icon(
+          Icons.check,
+        ),
+        color: Theme.of(context).primaryColor,
+        tooltip: 'Add Sticker to WhatsApp',
+        onPressed: () {},
+      );
     } else {
-      setState(() {
-        depInstallWidget = IconButton(
-          padding: EdgeInsets.all(13),
-          iconSize: 30,
-          icon: Icon(
-            Icons.add,
-          ),
-          color: Colors.teal,
-          tooltip: 'Add Sticker to WhatsApp',
-          onPressed: () async {
-            whatsAppStickers.addStickerPack(
-              packageName: WhatsAppPackage.Consumer,
-              stickerPackIdentifier: identifier,
-              stickerPackName: name,
-              listener: (action, result, {error = 'hi'}) => processResponse(
-                action: action,
-                result: result,
-                error: error,
-                successCallback: () async {
-                  _checkInstallationStatuses();
-                },
-                context: context,
-              ),
-            );
-          },
-        );
-      });
+      depInstallWidget = IconButton(
+        padding: EdgeInsets.all(13),
+        iconSize: 30,
+        icon: Icon(
+          Icons.add,
+        ),
+        color: Colors.teal,
+        tooltip: 'Add Sticker to WhatsApp',
+        onPressed: () async {
+          whatsAppStickers.addStickerPack(
+            packageName: WhatsAppPackage.Consumer,
+            stickerPackIdentifier: identifier,
+            stickerPackName: name,
+            listener: (action, result, {error = 'hi'}) => processResponse(
+              action: action,
+              result: result,
+              error: error,
+              successCallback: () async {
+                _checkInstallationStatuses();
+              },
+              context: context,
+            ),
+          );
+        },
+      );
     }
 
     return Container(
@@ -213,7 +209,7 @@ class _StickerListState extends State<StickerList> {
         ),
         trailing: Column(
           children: <Widget>[
-           depInstallWidget,
+            depInstallWidget,
           ],
         ),
       ),
