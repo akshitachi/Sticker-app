@@ -50,7 +50,6 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-    
       body: Column(
         children: [
           SizedBox(
@@ -97,10 +96,10 @@ class HomeScreen extends StatelessWidget {
           ),
           Divider(
             color: Colors.black,
-            thickness: 0.8,
+            thickness: MediaQuery.of(context).size.height * 0.0014,
           ),
           Container(
-            height: MediaQuery.of(context).size.height * 0.67,
+            height: MediaQuery.of(context).size.height * 0.65,
             child: StickerList(),
           )
         ],
