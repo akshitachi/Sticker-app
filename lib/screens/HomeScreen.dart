@@ -8,45 +8,49 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        centerTitle: true,
-        backgroundColor: Color(0xFF3490A3),
-        title: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.08,
-              ),
-              Container(
-                height: MediaQuery.of(context).size.height * 0.04,
-                width: MediaQuery.of(context).size.width * 0.08,
-                decoration: BoxDecoration(shape: BoxShape.circle),
-                child: CircleAvatar(
-                  backgroundColor: Colors.white,
-                  backgroundImage: AssetImage('images/memexdlogo.png'),
+      appBar: PreferredSize(
+        preferredSize:
+            Size.fromHeight(MediaQuery.of(context).size.height * 0.05),
+        child: AppBar(
+          elevation: 0,
+          centerTitle: true,
+          backgroundColor: Color(0xFF3490A3),
+          title: Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.08,
                 ),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.02,
-              ),
-              Center(
-                child: Text(
-                  'MEMEXD',
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Color(0xFFE3E3E3),
-                    fontWeight: FontWeight.w600,
-                    fontFamily: 'Montserrat',
-                    letterSpacing: 4,
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.04,
+                  width: MediaQuery.of(context).size.width * 0.08,
+                  decoration: BoxDecoration(shape: BoxShape.circle),
+                  child: CircleAvatar(
+                    backgroundColor: Colors.white,
+                    backgroundImage: AssetImage('images/memexdlogo.png'),
                   ),
                 ),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.16,
-              ),
-            ],
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.02,
+                ),
+                Center(
+                  child: Text(
+                    'MEMEXD',
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Color(0xFFE3E3E3),
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'Montserrat',
+                      letterSpacing: 4,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.16,
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -98,8 +102,7 @@ class HomeScreen extends StatelessWidget {
             color: Colors.black,
             thickness: MediaQuery.of(context).size.height * 0.0014,
           ),
-          Container(
-            height: MediaQuery.of(context).size.height * 0.65,
+          Expanded(
             child: StickerList(),
           )
         ],
@@ -111,10 +114,15 @@ class HomeScreen extends StatelessWidget {
               FollowUsScreen.id,
             );
           },
-          child: Text('Follow Us'),
+          child: Text(
+            'Follow Us',
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.height * 0.02,
+            ),
+          ),
         ),
         SizedBox(
-          width: MediaQuery.of(context).size.width * 0.15,
+          width: MediaQuery.of(context).size.width * 0.06,
         ),
         GestureDetector(
           onTap: () {
@@ -122,10 +130,15 @@ class HomeScreen extends StatelessWidget {
               AboutUsScreen.id,
             );
           },
-          child: Text('About Us'),
+          child: Text(
+            'About Us',
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.height * 0.02,
+            ),
+          ),
         ),
         SizedBox(
-          width: MediaQuery.of(context).size.width * 0.15,
+          width: MediaQuery.of(context).size.width * 0.06,
         ),
         GestureDetector(
           onTap: () {
@@ -133,10 +146,15 @@ class HomeScreen extends StatelessWidget {
               ReachUsScreen.id,
             );
           },
-          child: Text('Reach Us'),
+          child: Text(
+            'Reach Us',
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.height * 0.02,
+            ),
+          ),
         ),
         SizedBox(
-          width: MediaQuery.of(context).size.width * 0.001,
+          width: MediaQuery.of(context).size.width * 0.06,
         ),
       ],
     );
